@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 
 from src.domain.entities.run import RunDto
 
@@ -7,7 +7,7 @@ from src.domain.entities.run import RunDto
 class PipelineBase(BaseModel):
     name: str
     description: str
-    workflow: str
+    workflow: Optional[str]
 
 class PipelineCreateDto(PipelineBase):
     pass

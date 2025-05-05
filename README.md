@@ -29,7 +29,7 @@ This is a simple API for managing pipelines and pipeline runs, built with FastAP
 ### Using Uvicorn
 
 
-1. Start the Uvicorn server:
+- Start the Uvicorn server:
 
     ```bash
     uv run uvicorn src.app.main:app   
@@ -39,7 +39,7 @@ This is a simple API for managing pipelines and pipeline runs, built with FastAP
 
 ### Using Docker Compose (Recommended)
 
-1.  Build and run the Docker containers:
+- Build and run the Docker containers:
 
     ```bash
     docker compose build

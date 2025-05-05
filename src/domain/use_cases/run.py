@@ -11,6 +11,10 @@ from src.interfaces.database.repositories.run_repository import RunRepository
 logger = logging.getLogger(__name__)
 
 class RunUseCase:
+    """
+    UseCase for managing pipeline run business logic.
+    """
+
     def __init__(self,
         repo: Annotated[RunRepositoryInterface, Depends(RunRepository)],
         pipeline_use_case: Annotated[PipelineUseCase, Depends()]
@@ -21,7 +25,7 @@ class RunUseCase:
 
     async def create_pipeline_run(self, pipeline_id: int, run_create: RunCreateDto) -> RunDto:
         """
-        UseCase to create a new pipeline.
+        Create a new pipeline run.
         """
 
         await self.validate_pipeline(pipeline_id=pipeline_id)

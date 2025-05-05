@@ -26,9 +26,3 @@ async def get_async_db():
 async def create_db_and_tables():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-
-    # # Yield control to the application
-    # yield
-    #
-    # # Clean up resources when the application shuts down
-    # await engine.dispose()

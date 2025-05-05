@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 class PipelineUseCase:
     """
-    Service for managing pipeline business logic.
+    UseCase for managing pipeline business logic.
     """
 
     def __init__(self, repo: Annotated[PipelineRepositoryInterface, Depends(PipelineRepository)]):

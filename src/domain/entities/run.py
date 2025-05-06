@@ -8,6 +8,7 @@ class RunCreateRequest(BaseModel):
 
 class RunCreateDto(RunCreateRequest):
     pipeline_id: int
+    workflow_snapshot: Optional[dict]
 
 class RunDto(RunCreateDto):
     id: int

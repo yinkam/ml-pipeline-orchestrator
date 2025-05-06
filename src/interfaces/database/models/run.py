@@ -16,7 +16,9 @@ class Run(TimestampMixin, Base):
     metadata_: Mapped[str] = mapped_column(nullable=True)  # metadata is being used in DeclarativeBase/Base class
     workflow_snapshot: Mapped[str] = mapped_column(nullable=True)
     duration: Mapped[int] = mapped_column(default=300)
+    triggered_by: Mapped[str] = mapped_column(default='system')
+    triggered_at: Mapped[datetime] = mapped_column(default=func.now())
+    last_triggered_at: Mapped[datetime] = mapped_column(nullable=True)
     started_at: Mapped[datetime] = mapped_column(default=func.now())
     ended_at: Mapped[datetime] = mapped_column(nullable=True)
 
-    # pipeline = relationship("Pipeline", back_populates="runs")

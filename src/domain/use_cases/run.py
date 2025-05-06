@@ -76,3 +76,10 @@ class RunUseCase:
         pipeline = await self.pipeline_use_case.get_pipeline(pipeline_id)
         if not pipeline:
             raise HTTPException(status_code=404, detail=f"Pipeline with ID {pipeline_id} not found")
+
+    async def execute_workflow(self):
+        # check valid DAG/sequential definitions
+        # execute tasks/steps in workflow starting with independent tasks
+        # execute dependent tasks as their dependencies are completed
+        # save each task/steps to Task/Step table when/after it has been scheduled for execution.
+        pass
